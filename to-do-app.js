@@ -61,10 +61,8 @@
         };
     };
 
-    document.addEventListener('DOMContentLoaded', function () {
-        let container = document.getElementById('todo-app');
-
-        let todoAppTitle = createAppTitle('To-do list');
+    function createTodoApp(container, title = 'To-do list') {
+        let todoAppTitle = createAppTitle(title);
         let todoItemForm = createTodoItemForm();
         let todoList = createTodoList();
 
@@ -95,5 +93,7 @@
 
             todoItemForm.input.value = '';
         });
-    });
+    }
+
+    window.createTodoApp = createTodoApp;
 })();
